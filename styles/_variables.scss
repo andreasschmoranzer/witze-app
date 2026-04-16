@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Scribble&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+$primary-color: rgb(49, 49, 49);
+$secondary-color: rgb(1, 222, 1);
+$danger-color: rgb(214, 4, 4);
+
+$primary-font-family: "Inter", sans-serif;
+$secondary-font-family: "Rubik Scribble", system-ui;
+
+$primary-font-color: white;
+$border-radius: 0.2rem;
+
+@mixin backgroundLighten($color) {
+  background-color: lighten($color, 10);
+}
+
+@mixin backgroundDarken($color) {
+  background-color: darken($color, 10);
+}
+
+@mixin tablet() {
+  @media only screen and (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @media only screen and (min-width: 1000px) {
+    @content;
+  }
+}
