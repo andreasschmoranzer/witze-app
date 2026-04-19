@@ -1,15 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Scribble&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
 
-$primary-color: rgb(49, 49, 49);
-$secondary-color: rgb(1, 222, 1);
-$danger-color: rgb(214, 4, 4);
+$primary-color: rgb(31, 31, 31);
+$secondary-color: rgb(202, 192, 0);
+$danger-color: rgb(255, 48, 48);
 
+// $primary-font-family: "Be Vietnam Pro", sans-serif;
 $primary-font-family: "Inter", sans-serif;
 $secondary-font-family: "Rubik Scribble", system-ui;
 
 $primary-font-color: white;
-$border-radius: 0.2rem;
+$border-radius: 1rem;
 
 @mixin backgroundLighten($color) {
   background-color: lighten($color, 10);

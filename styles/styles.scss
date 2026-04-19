@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+:root {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: $primary-color;
   font-family: $primary-font-family;
@@ -84,7 +88,8 @@ body {
     border: 1px solid $secondary-color;
     background-color: transparent;
     color: $secondary-color;
-    display: flex;
+    display: none;
+    // display: flex;
     justify-content: center;
     align-items: center;
     gap: 0.5rem;

@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
-    <link rel="stylesheet" href="output/styles.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Witze App!</title>
   </head>
@@ -12,7 +11,7 @@
       <h1 class="heading">Witze App</h1>
       <div class="current-joke">
         <p class="current-joke__text">
-          Klicke auf den Button um einen Witz zu laden!
+          <em>Klicke auf den Button um einen Witz zu laden!</em>
         </p>
         <div class="current-joke__actions">
           <button class="current-joke__new-joke">Neuen Witz laden</button>
@@ -37,53 +36,9 @@
       </div>
       <div class="saved-jokes">
         <h2 class="saved-jokes__heading">Gespeicherte Witze</h2>
-        <div class="saved-jokes__list">
-          <div class="saved-joke">
-            <p class="saved-joke__text">
-              Warum ist ein Backofen wütend? Weil er auf 180 ist.
-            </p>
-            <div class="saved-joke__action">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="saved-joke__delete-icon"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="m3 3 1.664 1.664M21 21l-1.5-1.5m-5.485-1.242L12 17.25 4.5 21V8.742m.164-4.078a2.15 2.15 0 0 1 1.743-1.342 48.507 48.507 0 0 1 11.186 0c1.1.128 1.907 1.077 1.907 2.185V19.5M4.664 4.664 19.5 19.5"
-                />
-              </svg>
-            </div>
-          </div>
-          <div class="saved-joke">
-            <p class="saved-joke__text">
-              Lehrer: "Wer kann mir sechs Tiere nennen, die in Afrika leben?"
-              Schüler: "Ein Löwe und fünf Zebras."
-            </p>
-            <div class="saved-joke__action">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="saved-joke__delete-icon"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="m3 3 1.664 1.664M21 21l-1.5-1.5m-5.485-1.242L12 17.25 4.5 21V8.742m.164-4.078a2.15 2.15 0 0 1 1.743-1.342 48.507 48.507 0 0 1 11.186 0c1.1.128 1.907 1.077 1.907 2.185V19.5M4.664 4.664 19.5 19.5"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
+        <div class="saved-jokes__list"></div>
       </div>
     </section>
-    <script type="module" src="main.js"></script>
+    <script type="module" src="src/main.js"></script>
   </body>
 </html>
