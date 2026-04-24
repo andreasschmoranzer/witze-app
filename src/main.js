@@ -23,7 +23,7 @@ lightModeButton.addEventListener("click", () => lightMode());
 darkModeButton.addEventListener("click", () => darkMode());
 
 displaySavedJokes();
-lightMode();
+darkMode();
 
 function applyEventListener() {
   const deleteJokeButtonEls = document.querySelectorAll(".saved-joke__action");
