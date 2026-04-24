@@ -1,17 +1,48 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Scribble&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rampart+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
 
 $primary-color: rgb(31, 31, 31);
-$secondary-color: rgb(202, 192, 0);
+$secondary-color: rgb(238, 194, 0);
+//$secondary-color: rgb(202, 192, 0);
 $danger-color: rgb(255, 48, 48);
 
 // $primary-font-family: "Be Vietnam Pro", sans-serif;
 $primary-font-family: "Inter", sans-serif;
-$secondary-font-family: "Rubik Scribble", system-ui;
+// $secondary-font-family: "Rubik Scribble", system-ui;
+$secondary-font-family: "Rampart One", sans-serif;
+// $secondary-font-family: "Bangers", system-ui;
 
 $primary-font-color: white;
 $border-radius: 1rem;
+
+$themes: (
+  light: (
+    primary-color: rgb(250, 250, 250),
+    primary-color-darken: rgb(235, 235, 235),
+    secondary-color: rgb(155, 138, 0),
+    primary-font-color: $primary-color,
+  ),
+);
+
+@mixin themify($themes) {
+  @each $name, $values in $themes {
+    .#{$name}-theme {
+      $theme-map: $values !global;
+      @content;
+    }
+  }
+}
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
+
+@mixin headings() {
+  font-style: italic;
+}
 
 @mixin backgroundLighten($color) {
   background-color: lighten($color, 10);
@@ -30,5 +61,58 @@ $border-radius: 1rem;
 @mixin desktop() {
   @media only screen and (min-width: 1000px) {
     @content;
+  }
+}
+
+@include themify($themes) {
+  body {
+    background-color: themed("primary-color");
+    color: themed("primary-font-color");
+  }
+
+  .design-mode {
+    &__box {
+      background-color: themed("primary-color-darken");
+    }
+
+    &__light-icon,
+    &__dark-icon {
+      stroke: themed("primary-font-color");
+    }
+
+    &__theme--selected {
+      background-color: themed("primary-color");
+    }
+  }
+
+  .heading {
+    color: themed("secondary-color");
+  }
+
+  .current-joke {
+    background-color: themed("primary-color-darken");
+
+    &__new-joke {
+      background-color: themed("secondary-color");
+      color: themed("primary-color");
+    }
+
+    &__save-joke {
+      border: 1px solid themed("secondary-color");
+      color: themed("secondary-color");
+
+      &:hover {
+        background-color: themed("secondary-color");
+        color: themed("primary-color");
+      }
+    }
+  }
+
+  .saved-joke {
+    background-color: themed("primary-color-darken");
+
+    &__delete-icon {
+      stroke: themed("primary-color");
+    }
   }
 }

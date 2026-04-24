@@ -4,18 +4,26 @@ import {
   saveJokeToLocalstorage,
 } from "./storing_local_storage";
 import "../styles/styles.scss";
+import "../styles/_variables.scss";
 
 const generateNewJokeButton = document.querySelector(".current-joke__new-joke");
 const saveJokeButton = document.querySelector(".current-joke__save-joke");
 const deleteJokeButton = document.querySelector(".saved-joke__action");
+const lightModeButton = document.querySelector(".design-mode__light");
+const darkModeButton = document.querySelector(".design-mode__dark");
 
+const rootEl = document.documentElement;
 const jokeParagraphEl = document.querySelector(".current-joke__text");
 const savedJokeListEl = document.querySelector(".saved-jokes__list");
+const currentJokeBoxEl = document.querySelector(".current-joke");
 
 generateNewJokeButton.addEventListener("click", () => showRandomJoke());
 saveJokeButton.addEventListener("click", () => saveJoke());
+lightModeButton.addEventListener("click", () => lightMode());
+darkModeButton.addEventListener("click", () => darkMode());
 
 displaySavedJokes();
+lightMode();
 
 function applyEventListener() {
   const deleteJokeButtonEls = document.querySelectorAll(".saved-joke__action");
@@ -112,4 +120,18 @@ function deleteJoke(id) {
 
   saveJokeToLocalstorage(jokes);
   displaySavedJokes();
+}
+
+function lightMode() {
+  darkModeButton.classList.remove("design-mode__theme--selected");
+  lightModeButton.classList.add("design-mode__theme--selected");
+
+  rootEl.classList.add("light-theme");
+}
+
+function darkMode() {
+  lightModeButton.classList.remove("design-mode__theme--selected");
+  darkModeButton.classList.add("design-mode__theme--selected");
+
+  rootEl.classList.remove("light-theme");
 }
