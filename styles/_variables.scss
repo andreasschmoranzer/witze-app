@@ -68,6 +68,7 @@ $themes: (
   body {
     background-color: themed("primary-color");
     color: themed("primary-font-color");
+    transition: 0.2s all ease-in-out;
   }
 
   .design-mode {

@@ -15,6 +15,7 @@ body {
   color: $primary-font-color;
   // font-weight: 300;
   overflow: auto;
+  transition: 0.2s all ease-in-out;
 }
 
 #app {

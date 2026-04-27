@@ -52,12 +52,11 @@ export function saveJoke() {
     return;
   }
 
-  let id = savedJokes.length;
-
   const jokeToSave = {
-    id,
+    id: getNextId(),
     text: generatedJoke,
   };
+
   savedJokes.push(jokeToSave);
 
   saveJokeToLocalstorage(savedJokes);
@@ -134,4 +133,23 @@ function darkMode() {
   darkModeButton.classList.add("design-mode__theme--selected");
 
   rootEl.classList.remove("light-theme");
+}
+
+function getNextId() {
+  let jokeId = 1;
+
+  const savedJokes = getJokesFromLocalstorage();
+
+  console.log(savedJokes);
+
+  for (let i = 0; i < savedJokes.length + 1; i++) {
+    const findCurrentJokeId = savedJokes.find((item) => item.id === jokeId);
+    if (findCurrentJokeId === undefined) {
+      break;
+    } else {
+      jokeId++;
+    }
+  }
+  console.log(jokeId);
+  return jokeId;
 }
